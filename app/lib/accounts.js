@@ -2,7 +2,7 @@
  * Created by rayarvin on 3/31/16.
  */
 if (Meteor.isServer) {
-  Accounts._options.forbidClientAccountCreation = false;
+  // Accounts._options.forbidClientAccountCreation = false;
   Accounts.onCreateUser(function (options, user) {
     var attachData, email, picture, profileImageUrl, profilePicture, url, service, allEmails, firstEmail;
     profileImageUrl = undefined;
@@ -22,10 +22,9 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
   Accounts.config({
-    forbidClientAccountCreation: false
+    // forbidClientAccountCreation: false
   });
   Accounts.ui.config({
     passwordSignupFields: 'USERNAME_AND_EMAIL'
   });
 }
-
